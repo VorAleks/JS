@@ -56,7 +56,7 @@ header svg {
 .products {
     display: flex;
     justify-content: space-around;
-    padding-top: 50px;
+    padding-top: 55px;
 }
 .product-item {
     width: 270px;
