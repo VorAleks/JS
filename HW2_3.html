@@ -1,0 +1,122 @@
+<meta charset="utf-8">
+<script>
+
+    class Hamburger {
+        constructor(size, stuffing) {
+            this.size = size;
+            this.stuffing = stuffing;
+            this.topping = null;
+            this.sizes = [];
+            this.stuffings = [];
+            this.toppings = [];
+            this._fetchSizes();
+            this._fetchStuffings();
+            this._fetchToppings();
+        }
+        _fetchSizes() {
+            this.sizes = [
+                { name: 'small', price: 50, ccal: 20 },
+                { name: 'big', price: 100, ccal: 40 }
+            ];
+        }
+        _fetchStuffings() {
+            this.stuffings = [
+                { name: 'cheese', price: 10, ccal: 20 },
+                { name: 'salad', price: 20, ccal: 5 },
+                { name: 'potato', price: 15, ccal: 10 }
+            ];
+        }
+        _fetchToppings() {
+            this.toppings = [
+                { name: 'seasoning', price: 15, ccal: 0 },
+                { name: 'mayonnaise', price: 20, ccal: 5 },
+            ];
+        }
+        addTopping(topping) {
+            // Добавить добавку
+            this.topping = topping;
+        }
+        removeTopping(topping) {
+            // Убрать добавку 
+            this.topping = null;
+        }
+        getToppings() {
+            // Получить список добавок
+            console.log(`В наличии добавки:`);
+            this.toppings.forEach(element => {
+                console.log
+                    (`${element.name} за ${element.price}р, ${element.ccal}ккал`);
+            });
+        }
+        getSize() {
+            // Узнать размер гамбургера 
+            console.log(`Гамбургер размера ${this.size}`);
+        }
+        getStuffing() {
+            // Узнать начинку гамбургера
+            console.log(`Гамбургер с начинкой ${this.stuffing}`);
+        }
+        calculatePrice() {
+            // Узнать цену 
+            let orderPrice = 0;
+            this.sizes.forEach(element => {
+                if (this.size == element.name) {
+                    orderPrice += element.price;
+                }
+            });
+            this.stuffings.forEach(element => {
+                if (this.stuffing == element.name) {
+                    orderPrice += element.price;
+                }
+            });
+            if (this.topping) {
+                this.toppings.forEach(element => {
+                    if (this.topping == element.name) {
+                        orderPrice += element.price;
+                    }
+                });
+            }
+            console.log(`Цена гамбургера ${orderPrice}`);
+            return orderPrice;
+        }
+        calculateCalories() {
+            // Узнать калорийность 
+            let orderCcal = 0;
+            this.sizes.forEach(element => {
+                if (this.size == element.name) {
+                    orderCcal += element.ccal;
+                }
+            });
+            this.stuffings.forEach(element => {
+                if (this.stuffing == element.name) {
+                    orderCcal += element.ccal;
+                }
+            });
+            if (this.topping) {
+                this.toppings.forEach(element => {
+                    if (this.topping == element.name) {
+                        orderCcal += element.ccal;
+                    }
+                });
+            }
+            console.log(`Калорийность гамбургера ${orderCcal}`);
+            return orderCcal;
+        }
+    }
+
+    let order = new Hamburger('small', 'cheese');
+    console.log
+        (`Гамбургер ${order.size} с ${order.stuffing} c ${order.topping}`);
+    order.addTopping('mayonnaise');
+    console.log
+        (`Гамбургер ${order.size} с ${order.stuffing} c ${order.topping}`);
+    // order.removeTopping();
+    console.log
+        (`Гамбургер ${order.size} с ${order.stuffing} c ${order.topping}`);
+    order.getToppings();
+    order.getSize();
+    order.getStuffing();
+    order.calculatePrice();
+    order.calculateCalories();
+
+</script>

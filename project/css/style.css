@@ -2,6 +2,9 @@
     max-width: 1920px;
     margin: 0 auto;
 }
+.hidden {
+    display: none;
+}
 
 header {
     background: #222222;
@@ -53,6 +56,36 @@ header svg {
 }
 /* === кнопка корзины конец === */
 
+/* === корзина покупателя начало === */
+.basket {
+    position: absolute;
+    z-index: 3;
+    right: 0px;
+    top: 52px;
+    background: white;
+    padding: 10px;
+    border: 1px solid #ebebeb;
+    border-radius: 3px;
+    font-size: 14px;
+}
+.basketHeader {
+    font-weight: bold;
+}
+.basketRow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: 10px;
+}
+.basketTotal {
+    font-weight: bold;
+    text-align: right;
+}
+/* === корзина покупателя конец === */
+
+/* ===   === */
 .products {
     display: flex;
     justify-content: space-around;
@@ -62,11 +95,28 @@ header svg {
     width: 270px;
     height: 350px;
     padding: 10px;
-    text-align: center;
+    text-align: left;
     border: 1px solid #222222;
     box-sizing: border-box;
 }
 .product-item img {
     width: 100%;
     display: block;
+}
+.buy-btn {
+    width: 100px;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+    background-color: #222222;
+    color: #E8E8E8;
+    
+}
+.buy-btn:hover {
+    color: #222222;
+    background-color: #E8E8E8;
+}
+.buy-btn:active {
+    color: #E8E8E8;
+    background-color: #222222;
 }
