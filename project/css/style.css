@@ -60,7 +60,6 @@ header svg {
 .basket {
     position: absolute;
     z-index: 3;
-    right: 0px;
     top: 52px;
     background: white;
     padding: 10px;
@@ -78,6 +77,69 @@ header svg {
     margin-bottom: 10px;
     border-bottom: 1px solid #ebebeb;
     padding-bottom: 10px;
+}
+.quantity {
+    display: flex;
+    justify-content: left;
+}
+.increase, 
+.decrease {
+    margin: 0 5px 0 5px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    border: 1px solid #000;
+    line-height: 16px;
+}
+.increase:hover, 
+.decrease:hover {
+    color:#e8e8e8e8;
+    background-color: #222222;
+}
+.increase:active, 
+.decrease:active {
+    color:#222222;
+    background-color: #e8e8e8e8;
+}
+.sum {
+    display: flex;
+    justify-content: space-between;
+}
+.productTotalRow {
+    display: block;
+}
+.delete-btn {
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+.delete-btn::before,
+ .delete-btn::after {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 2px;
+    background:#222222;
+    border-radius: 10px;
+    position: absolute;
+    top: 5px;
+    left: -3px;
+    transform: rotate(45deg);
+}
+.delete-btn:hover::before,
+ .delete-btn:hover::after {
+     background-color: #F16D7F;
+ }
+ .delete-btn:active::before,
+ .delete-btn:active::after {
+     background-color: #000000;
+ }
+.delete-btn::after {
+    transform: rotate(-45deg);
 }
 .basketTotal {
     font-weight: bold;
