@@ -229,17 +229,26 @@ class Cart {
 
 // кнопка корзины в меню
 const cartBtnEl = document.querySelector('.btn-cart');
+// кнопка данных клиента в меню
+const userDataBtnEl = document.querySelector('.btn-user');
 // место вывода количества товара в корзине 
 const goodsInCartEl = document.querySelector('.btn-cart>span');
 // корзина
 const goodsCartEl = document.querySelector('.basket');
+// поле ввода данных клиента
+const userDataEnterEl = document.querySelector('.user_data');
 // место итоговой строки
 const basketTotalEl = document.querySelector('.basketTotal');
 // сумма товаров в корзине
 const basketTotalValueEl = document.querySelector('.basketTotalValue');
+
+// событие открывает закрывает ввод данных клиента
+userDataBtnEl.addEventListener('click',
+    () => userDataEnterEl.classList.toggle('hidden'));
+
 // событие открывает закрывает корзину 
 cartBtnEl.addEventListener('click',
-    event => goodsCartEl.classList.toggle('hidden'));
+    () => goodsCartEl.classList.toggle('hidden'));
 
 // корзина покупателя
 const productCart = new Cart();
@@ -275,7 +284,52 @@ document.querySelector('.basket').addEventListener('click', event => {
     productCart.changeCart(id, title, price, action);
 });
 
+const formEl = document.querySelector('form');
+formEl.addEventListener('submit', event => {
+    const userName = formEl.querySelector('.user-name');
+    const regexpUserName = /^[A-zА-яЁё\s]+$/;
+    const userPhone = formEl.querySelector('.user-phone');
+    const regexpUserPhone = /^\+7\(\d{3}\)\d{3}-\d{4}$/;
+    const userMail = formEl.querySelector('.user-mail');
+    const regexpUserMail = /^([a-z\.-]+)@([a-z]+)\.([a-z\.]{2,6})$/;
+    if (!regexpUserName.test(userName.value)) {
+        userName.classList.add('error');
+        formEl.querySelector('.nameError').textContent = 'Имя - только буквы.';
+        event.preventDefault();
+    } else {
+        userName.classList.remove('error');
+        formEl.querySelector('.nameError').textContent = '';
+    }
 
+    if (!regexpUserPhone.test(userPhone.value)) {
+        userPhone.classList.add('error');
+        formEl.querySelector('.phoneError').textContent = 'Телефон в виде +7(000)000-0000';
+        event.preventDefault();
+    } else {
+        userPhone.classList.remove('error');
+        formEl.querySelector('.phoneError').textContent = '';
+    }
+    if (!regexpUserMail.test(userMail.value)) {
+        userMail.classList.add('error');
+        formEl.querySelector('.mailError').textContent = 'Почта в виде:mymail@mail.ru my.mail@mail.ru my-mail@mail.ru';
+        event.preventDefault();
+    } else {
+        userMail.classList.remove('error');
+        formEl.querySelector('.mailError').textContent = '';
+    }
+
+});
+
+// formEl.addEventListener('onchange', event => {
+//     if (!event.target.classList.contains('form-control')) {
+//         return;
+//     }
+//     event.target.value === ''
+//         ? event.target.classList.add('error')
+//         : event.target.classList.remove('error');
+//     event.preventDefault();
+
+// });
 
 
 
