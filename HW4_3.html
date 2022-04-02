@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homework4_3</title>
+    <style>
+        error {
+            border: 2px solid #f16d7f;
+        }
+
+        .inputError {
+
+            color: #f16d7f;
+            content: "";
+        }
+
+        form span {
+            color: #f16d7f;
+        }
+    </style>
+</head>
+
+<body>
+    <form class="user_data hidden" action="">
+        Ваше имя:<input class="user-name form-control" type="text" size="35" placeholder="Your name"><br>
+        <span class="nameError"></span><br>
+        Ваш телефон:<input class="user-phone form-control" type="text" size="15" placeholder="+7(000)000-0000"><br>
+        <span class="phoneError"></span><br>
+        E-mail :<input class="user-mail form-control" type="text" size="38" placeholder="E-mail"><br>
+        <span class="mailError"></span><br>
+        <textarea cols="50" rows="5"></textarea><br>
+        <input type="submit" value="Отправить">
+        <input type="reset" value="Очистить">
+    </form>
+
+    <script>
+        const formEl = document.querySelector('form');
+        formEl.addEventListener('submit', event => {
+            const userName = formEl.querySelector('.user-name');
+            const regexpUserName = /^[A-zА-яЁё\s]+$/;
+            const userPhone = formEl.querySelector('.user-phone');
+            const regexpUserPhone = /^\+7\(\d{3}\)\d{3}-\d{4}$/;
+            const userMail = formEl.querySelector('.user-mail');
+            const regexpUserMail = /^([a-z\.-]+)@([a-z]+)\.([a-z\.]{2,6})$/;
+            if (!regexpUserName.test(userName.value)) {
+                userName.classList.add('error');
+                formEl.querySelector('.nameError').textContent = 'Имя - только буквы.';
+                event.preventDefault();
+            } else {
+                userName.classList.remove('error');
+                formEl.querySelector('.nameError').textContent = '';
+            }
+
+            if (!regexpUserPhone.test(userPhone.value)) {
+                userPhone.classList.add('error');
+                formEl.querySelector('.phoneError').textContent = 'Телефон в виде +7(000)000-0000';
+                event.preventDefault();
+            } else {
+                userPhone.classList.remove('error');
+                formEl.querySelector('.phoneError').textContent = '';
+            }
+            if (!regexpUserMail.test(userMail.value)) {
+                userMail.classList.add('error');
+                formEl.querySelector('.mailError').textContent = 'Почта в виде:mymail@mail.ru my.mail@mail.ru my-mail@mail.ru';
+                event.preventDefault();
+            } else {
+                userMail.classList.remove('error');
+                formEl.querySelector('.mailError').textContent = '';
+            }
+        });
+
+    </script>
+</body>
+
+</html>

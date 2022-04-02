@@ -3,6 +3,20 @@
     margin: 0 auto;
 }
 
+.hidden {
+    display: none;
+}
+
+.error {
+    border: 2px solid #f16d7f;
+}
+
+.inputError {
+
+    color: #f16d7f;
+    content: "";
+}
+
 header {
     background: #222222;
     height: 74px;
@@ -13,10 +27,16 @@ header {
     align-items: center;
 }
 
+.rightHeader {
+    display: flex;
+    justify-content: right;
+}
+
 header button {
     padding: 0;
     background-color: transparent;
     border: none;
+    cursor: pointer;
 }
 
 header svg {
@@ -25,25 +45,64 @@ header svg {
     fill: #E8E8E8;
 }
 
+
+
+
+
+
 /* === кнопка корзины начало === */
+/* === кнопка данных клиента начало  === */
+.btn-user {
+    margin-right: 10px;
+    width: 30px;
+    height: 45px;
+    position: relative;
+}
+
 .btn-cart {
     width: 40px;
     height: 40px;
     position: relative;
 }
 
-.btn-cart:hover svg {
+.btn-cart:hover svg,
+.btn-user:hover svg {
     fill: orange;
 }
-.btn-cart:active svg {
+
+.btn-cart:active svg,
+.btn-user:active svg {
     fill: red;
 }
+
+/* === кнопка данных клиента конец  === */
+
+/* === поле ввода данных клиента начало === */
+form span {
+    color: #f16d7f;
+}
+
+/* === корзина покупателя начало === */
+.user_data {
+    position: absolute;
+    z-index: 3;
+    top: 62px;
+    background: white;
+    padding: 10px;
+    border: 1px solid #424040;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+
+/* === поле ввода данных клиента конец === */
+
 .btn-cart>span {
     display: block;
     width: 19px;
     height: 19px;
     color: #E8E8E8;
-    background-color:#F16D7F;
+    background-color: #F16D7F;
     border-radius: 50%;
     position: absolute;
     top: -3px;
@@ -51,22 +110,152 @@ header svg {
     text-align: center;
     line-height: 19px;
 }
+
 /* === кнопка корзины конец === */
 
+/* === корзина покупателя начало === */
+.basket {
+    position: absolute;
+    z-index: 3;
+    top: 62px;
+    background: white;
+    padding: 10px;
+    border: 1px solid #424040;
+    border-radius: 3px;
+    font-size: 14px;
+}
+
+.basketHeader {
+    font-weight: bold;
+}
+
+.basketRow {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ebebeb;
+    padding-bottom: 10px;
+}
+
+.quantity {
+    display: flex;
+    justify-content: left;
+}
+
+.increase,
+.decrease {
+    margin: 0 5px 0 5px;
+    display: block;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    border: 1px solid #000;
+    line-height: 16px;
+}
+
+.increase:hover,
+.decrease:hover {
+    color: #e8e8e8e8;
+    background-color: #222222;
+}
+
+.increase:active,
+.decrease:active {
+    color: #222222;
+    background-color: #e8e8e8e8;
+}
+
+.sum {
+    display: flex;
+    justify-content: space-between;
+}
+
+.productTotalRow {
+    display: block;
+}
+
+.delete-btn {
+    display: block;
+    width: 12px;
+    height: 12px;
+    margin: 0;
+    padding: 0;
+    position: relative;
+}
+
+.delete-btn::before,
+.delete-btn::after {
+    content: "";
+    display: block;
+    width: 18px;
+    height: 2px;
+    background: #222222;
+    border-radius: 10px;
+    position: absolute;
+    top: 5px;
+    left: -3px;
+    transform: rotate(45deg);
+}
+
+.delete-btn:hover::before,
+.delete-btn:hover::after {
+    background-color: #F16D7F;
+}
+
+.delete-btn:active::before,
+.delete-btn:active::after {
+    background-color: #000000;
+}
+
+.delete-btn::after {
+    transform: rotate(-45deg);
+}
+
+.basketTotal {
+    font-weight: bold;
+    text-align: right;
+}
+
+/* === корзина покупателя конец === */
+
+/* ===   === */
 .products {
     display: flex;
     justify-content: space-around;
-    padding-top: 50px;
+    padding-top: 55px;
 }
+
 .product-item {
     width: 270px;
     height: 350px;
     padding: 10px;
-    text-align: center;
+    text-align: left;
     border: 1px solid #222222;
     box-sizing: border-box;
 }
+
 .product-item img {
     width: 100%;
     display: block;
+}
+
+.buy-btn {
+    width: 100px;
+    height: 30px;
+    display: block;
+    margin: 0 auto;
+    background-color: #222222;
+    color: #E8E8E8;
+
+}
+
+.buy-btn:hover {
+    color: #222222;
+    background-color: #E8E8E8;
+}
+
+.buy-btn:active {
+    color: #E8E8E8;
+    background-color: #222222;
 }
