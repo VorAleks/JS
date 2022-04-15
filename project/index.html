@@ -45,7 +45,7 @@
             </div>
         </header>
         <main>
-            <comp-error :error="error" ></comp-error>
+            <comp-error :error="error"></comp-error>
             <products-list :products="filtered" :img="imgProduct" @add-product="addProduct"></products-list>
             <!-- <div class="products">
                 <div class="product-item" v-for="product of filtered" :key="product.id_product">
@@ -63,7 +63,10 @@
         integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
         crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script src="js/comp.js"></script>
+    <script src="js/products.js"></script>
+    <script src="js/cart.js"></script>
+    <script src="js/filter.js"></script>
+    <script src="js/error.js"></script>
     <script src="js/main.js"></script>
 </body>
 
