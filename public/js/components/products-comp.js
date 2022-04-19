@@ -1,4 +1,4 @@
-Vue.component('products-list', {
+Vue.component('productsComp', {
     data() {
         return {
             // userSearch: '',

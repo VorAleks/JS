@@ -8,10 +8,10 @@ input:focus:not(:focus-visible) {
     outline: 0;
 }
 
-*:focus-visible,
+/* *:focus-visible,
 input:focus-visible {
     outline: 3px solid blue;
-}
+} */
 
 .container {
     max-width: 1600px;
@@ -97,13 +97,17 @@ input:focus-visible {
 }
 
 .page-header-search-btn {
-    width: 0;
+    /* width: 0; */
+    width: 150px;
+    min-height: 20px;
+    /* transition: width 1s ease; */
+    border: 2px solid #fff;
     min-height: 0;
     padding: 5px;
     outline: none;
     box-sizing: border-box;
     background-color: transparent;
-    border: none;
+    /* border: none; */
     position: absolute;
     top: -1px;
     left: 30px;
@@ -113,12 +117,12 @@ input:focus-visible {
     text-transform: capitalize;
 }
 
-.page-header-search-btn:focus {
+/* .page-header-search-btn {
     width: 150px;
     min-height: 20px;
     transition: width 1s ease;
     border: 2px solid #fff;
-}
+} */
 
 .page-header-search-btn:focus~label>svg {
     fill: green;
@@ -191,7 +195,7 @@ input:focus-visible {
 
 .menu-list {
     margin: 0;
-    display: none;
+    /* display: none; */
     width: 232px;
     min-height: 764px;
     /* значение в свойстве min-height удобно задать через переменную равную высоте второго блока */

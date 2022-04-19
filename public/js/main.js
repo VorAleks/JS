@@ -4,9 +4,7 @@ const app = new Vue({
     el: '#app',
     data: {
         error: false,
-        amount: 0,
-        countGoods: 0,
-    },
+         },
     methods: {
         getJson(url) {
             return fetch(url)
