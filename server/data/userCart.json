@@ -1,0 +1,30 @@
+{
+    "amount": 1100,
+    "countGoods": 2,
+    "contents": [
+        {
+            "quantity": 5,
+            "id_product": 3,
+            "imgProduct": "img/product-img-3.jpg",
+            "product_name": "Something New",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor.",
+            "price": 1000
+        },
+        {
+            "quantity": 7,
+            "id_product": 4,
+            "imgProduct": "img/product-img-4.jpg",
+            "product_name": "Dummy Thing",
+            "description": "Lorem ipsum dolor sit amet.",
+            "price": 1500
+        },
+        {
+            "quantity": 4,
+            "id_product": 6,
+            "imgProduct": "img/product-img-6.jpg",
+            "product_name": "Another One",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur.",
+            "price": 2700
+        }
+    ]
+}

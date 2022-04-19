@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <title>Главная страница</title>
+</head>
+
+<body>
+    <div id="app">
+        <header-comp ref="header" :count='5'></header-comp>
+        <cart-comp ref="cart"></cart-comp>
+        <main>
+            <brand-comp></brand-comp>
+            <categories-comp></categories-comp>
+            <products-comp ref="products"></products-comp>
+            <features-comp></features-comp>
+            <subscribe-comp></subscribe-comp>
+            <footer-comp></footer-comp>
+        </main>
+    </div>
+    <!-- <script defer src="https://use.fontawesome.com/releases/v5.7.2/js/all.js"
+        integrity="sha384-0pzryjIRos8mFBWMzSSZApWtPl/5++eIfzYmTgBBmXYdhvxPc+XcFEk+zJwDgWbP"
+        crossorigin="anonymous"></script> -->
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <!-- <script src="js/components/cart-comp.js"></script>
+    <script src="js/components/header-comp.js"></script>
+    <script src="js/components/error-comp.js"></script>
+    <script src="js/components/brand-comp.js"></script>
+    <script src="js/components/categories-comp.js"></script>
+    <script src="js/components/products-comp.js"></script>
+    <script src="js/components/features-comp.js"></script>
+    <script src="js/components/subscribe-comp.js"></script>
+    <script src="js/components/footer-comp.js"></script> -->
+    <script src="js/component.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>
