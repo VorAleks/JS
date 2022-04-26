@@ -191,7 +191,7 @@ input:focus-visible {
 
 .menu-list {
     margin: 0;
-    display: none;
+    /* display: none; */
     width: 232px;
     min-height: 764px;
     /* значение в свойстве min-height удобно задать через переменную равную высоте второго блока */
