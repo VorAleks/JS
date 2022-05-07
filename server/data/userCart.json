@@ -1,0 +1,22 @@
+{
+    "amount": 1100,
+    "countGoods": 2,
+    "contents": [
+        {
+            "quantity": 2,
+            "id_product": 5,
+            "imgProduct": "img/product-img-5.jpg",
+            "product_name": "Product Example",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+            "price": 300
+        },
+        {
+            "quantity": 2,
+            "id_product": 6,
+            "imgProduct": "img/product-img-6.jpg",
+            "product_name": "Another One",
+            "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur.",
+            "price": 2700
+        }
+    ]
+}
